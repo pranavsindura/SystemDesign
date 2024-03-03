@@ -110,7 +110,7 @@ class ChicagoPizzaFactory extends PizzaFactory {
   }
 }
 
-function main(): void {
+function factoryPattern(): void {
   const chicagoPizzaFactory = new ChicagoPizzaFactory();
   const nyPizzaFactory = new NYPizzaFactory();
 
@@ -127,4 +127,4 @@ function main(): void {
   console.log(pizza?.getName());
 }
 
-main();
+factoryPattern();
