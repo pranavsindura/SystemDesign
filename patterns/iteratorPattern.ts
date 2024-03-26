@@ -172,3 +172,4 @@ function iteratorPattern(): void {
 }
 
 iteratorPattern();
+export {};
