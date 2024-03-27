@@ -1,19 +1,375 @@
-Vegetarian Menu
-----------------
-Pav Bhaji (VEG) - Masala Bhaji served with 4 Pavs - 120
-Mysore Pak (VEG) - Besan barfi with ghee - 120
-Poha (VEG) - Indori Poha with peanuts and fresh vegetables - 60
-All Menu
-----------------
-Diner Menu
-----------------
-Pav Bhaji (VEG) - Masala Bhaji served with 4 Pavs - 120
-Hyderabadi Biryani (NON-VEG) - Flavourful hyderabadi biryani served with a small coke - 250
-Dessert Menu
-----------------
-Mysore Pak (VEG) - Besan barfi with ghee - 120
-Tiramisu (NON-VEG) - Coffee chocolate Tiramisu - 250
-Cafe Menu
-----------------
-Omelet (NON-VEG) - Omelet made with 3 eggs - 100
-Poha (VEG) - Indori Poha with peanuts and fresh vegetables - 60
+
+----------------------
+Gumballs left: 5
+Machine State: <ref *2> NoQuarterState {
+  machine: <ref *1> GumballMachine {
+    gumballCount: 5,
+    outOfGumballsState: OutOfGumballsState { machine: [Circular *1] },
+    noQuarterState: [Circular *2],
+    hasQuarterState: HasQuarterState { machine: [Circular *1] },
+    soldState: SoldState { machine: [Circular *1] },
+    state: [Circular *2]
+  }
+}
+----------------------
+
+accepted quarter
+
+----------------------
+Gumballs left: 5
+Machine State: <ref *2> HasQuarterState {
+  machine: <ref *1> GumballMachine {
+    gumballCount: 5,
+    outOfGumballsState: OutOfGumballsState { machine: [Circular *1] },
+    noQuarterState: NoQuarterState { machine: [Circular *1] },
+    hasQuarterState: [Circular *2],
+    soldState: SoldState { machine: [Circular *1] },
+    state: [Circular *2]
+  }
+}
+----------------------
+
+turning the crank
+dispensing gumball
+
+----------------------
+Gumballs left: 4
+Machine State: <ref *2> NoQuarterState {
+  machine: <ref *1> GumballMachine {
+    gumballCount: 4,
+    outOfGumballsState: OutOfGumballsState { machine: [Circular *1] },
+    noQuarterState: [Circular *2],
+    hasQuarterState: HasQuarterState { machine: [Circular *1] },
+    soldState: SoldState { machine: [Circular *1] },
+    state: [Circular *2]
+  }
+}
+----------------------
+
+accepted quarter
+
+----------------------
+Gumballs left: 4
+Machine State: <ref *2> HasQuarterState {
+  machine: <ref *1> GumballMachine {
+    gumballCount: 4,
+    outOfGumballsState: OutOfGumballsState { machine: [Circular *1] },
+    noQuarterState: NoQuarterState { machine: [Circular *1] },
+    hasQuarterState: [Circular *2],
+    soldState: SoldState { machine: [Circular *1] },
+    state: [Circular *2]
+  }
+}
+----------------------
+
+turning the crank
+dispensing gumball
+
+----------------------
+Gumballs left: 3
+Machine State: <ref *2> NoQuarterState {
+  machine: <ref *1> GumballMachine {
+    gumballCount: 3,
+    outOfGumballsState: OutOfGumballsState { machine: [Circular *1] },
+    noQuarterState: [Circular *2],
+    hasQuarterState: HasQuarterState { machine: [Circular *1] },
+    soldState: SoldState { machine: [Circular *1] },
+    state: [Circular *2]
+  }
+}
+----------------------
+
+accepted quarter
+
+----------------------
+Gumballs left: 3
+Machine State: <ref *2> HasQuarterState {
+  machine: <ref *1> GumballMachine {
+    gumballCount: 3,
+    outOfGumballsState: OutOfGumballsState { machine: [Circular *1] },
+    noQuarterState: NoQuarterState { machine: [Circular *1] },
+    hasQuarterState: [Circular *2],
+    soldState: SoldState { machine: [Circular *1] },
+    state: [Circular *2]
+  }
+}
+----------------------
+
+ejecting the quarter
+
+----------------------
+Gumballs left: 3
+Machine State: <ref *2> NoQuarterState {
+  machine: <ref *1> GumballMachine {
+    gumballCount: 3,
+    outOfGumballsState: OutOfGumballsState { machine: [Circular *1] },
+    noQuarterState: [Circular *2],
+    hasQuarterState: HasQuarterState { machine: [Circular *1] },
+    soldState: SoldState { machine: [Circular *1] },
+    state: [Circular *2]
+  }
+}
+----------------------
+
+accepted quarter
+
+----------------------
+Gumballs left: 3
+Machine State: <ref *2> HasQuarterState {
+  machine: <ref *1> GumballMachine {
+    gumballCount: 3,
+    outOfGumballsState: OutOfGumballsState { machine: [Circular *1] },
+    noQuarterState: NoQuarterState { machine: [Circular *1] },
+    hasQuarterState: [Circular *2],
+    soldState: SoldState { machine: [Circular *1] },
+    state: [Circular *2]
+  }
+}
+----------------------
+
+machine already has a quarter
+
+----------------------
+Gumballs left: 3
+Machine State: <ref *2> HasQuarterState {
+  machine: <ref *1> GumballMachine {
+    gumballCount: 3,
+    outOfGumballsState: OutOfGumballsState { machine: [Circular *1] },
+    noQuarterState: NoQuarterState { machine: [Circular *1] },
+    hasQuarterState: [Circular *2],
+    soldState: SoldState { machine: [Circular *1] },
+    state: [Circular *2]
+  }
+}
+----------------------
+
+turning the crank
+dispensing gumball
+
+----------------------
+Gumballs left: 2
+Machine State: <ref *2> NoQuarterState {
+  machine: <ref *1> GumballMachine {
+    gumballCount: 2,
+    outOfGumballsState: OutOfGumballsState { machine: [Circular *1] },
+    noQuarterState: [Circular *2],
+    hasQuarterState: HasQuarterState { machine: [Circular *1] },
+    soldState: SoldState { machine: [Circular *1] },
+    state: [Circular *2]
+  }
+}
+----------------------
+
+you need to pay first
+you need to pay first
+
+----------------------
+Gumballs left: 2
+Machine State: <ref *2> NoQuarterState {
+  machine: <ref *1> GumballMachine {
+    gumballCount: 2,
+    outOfGumballsState: OutOfGumballsState { machine: [Circular *1] },
+    noQuarterState: [Circular *2],
+    hasQuarterState: HasQuarterState { machine: [Circular *1] },
+    soldState: SoldState { machine: [Circular *1] },
+    state: [Circular *2]
+  }
+}
+----------------------
+
+no quarter present in the machine
+
+----------------------
+Gumballs left: 2
+Machine State: <ref *2> NoQuarterState {
+  machine: <ref *1> GumballMachine {
+    gumballCount: 2,
+    outOfGumballsState: OutOfGumballsState { machine: [Circular *1] },
+    noQuarterState: [Circular *2],
+    hasQuarterState: HasQuarterState { machine: [Circular *1] },
+    soldState: SoldState { machine: [Circular *1] },
+    state: [Circular *2]
+  }
+}
+----------------------
+
+accepted quarter
+
+----------------------
+Gumballs left: 2
+Machine State: <ref *2> HasQuarterState {
+  machine: <ref *1> GumballMachine {
+    gumballCount: 2,
+    outOfGumballsState: OutOfGumballsState { machine: [Circular *1] },
+    noQuarterState: NoQuarterState { machine: [Circular *1] },
+    hasQuarterState: [Circular *2],
+    soldState: SoldState { machine: [Circular *1] },
+    state: [Circular *2]
+  }
+}
+----------------------
+
+turning the crank
+dispensing gumball
+
+----------------------
+Gumballs left: 1
+Machine State: <ref *2> NoQuarterState {
+  machine: <ref *1> GumballMachine {
+    gumballCount: 1,
+    outOfGumballsState: OutOfGumballsState { machine: [Circular *1] },
+    noQuarterState: [Circular *2],
+    hasQuarterState: HasQuarterState { machine: [Circular *1] },
+    soldState: SoldState { machine: [Circular *1] },
+    state: [Circular *2]
+  }
+}
+----------------------
+
+accepted quarter
+
+----------------------
+Gumballs left: 1
+Machine State: <ref *2> HasQuarterState {
+  machine: <ref *1> GumballMachine {
+    gumballCount: 1,
+    outOfGumballsState: OutOfGumballsState { machine: [Circular *1] },
+    noQuarterState: NoQuarterState { machine: [Circular *1] },
+    hasQuarterState: [Circular *2],
+    soldState: SoldState { machine: [Circular *1] },
+    state: [Circular *2]
+  }
+}
+----------------------
+
+turning the crank
+dispensing gumball
+
+----------------------
+Gumballs left: 0
+Machine State: <ref *1> OutOfGumballsState {
+  machine: <ref *2> GumballMachine {
+    gumballCount: 0,
+    outOfGumballsState: [Circular *1],
+    noQuarterState: NoQuarterState { machine: [Circular *2] },
+    hasQuarterState: HasQuarterState { machine: [Circular *2] },
+    soldState: SoldState { machine: [Circular *2] },
+    state: [Circular *1]
+  }
+}
+----------------------
+
+cannot insert quarter, no more gumballs
+
+----------------------
+Gumballs left: 0
+Machine State: <ref *1> OutOfGumballsState {
+  machine: <ref *2> GumballMachine {
+    gumballCount: 0,
+    outOfGumballsState: [Circular *1],
+    noQuarterState: NoQuarterState { machine: [Circular *2] },
+    hasQuarterState: HasQuarterState { machine: [Circular *2] },
+    soldState: SoldState { machine: [Circular *2] },
+    state: [Circular *1]
+  }
+}
+----------------------
+
+no more gumballs
+no more gumballs
+
+----------------------
+Gumballs left: 0
+Machine State: <ref *1> OutOfGumballsState {
+  machine: <ref *2> GumballMachine {
+    gumballCount: 0,
+    outOfGumballsState: [Circular *1],
+    noQuarterState: NoQuarterState { machine: [Circular *2] },
+    hasQuarterState: HasQuarterState { machine: [Circular *2] },
+    soldState: SoldState { machine: [Circular *2] },
+    state: [Circular *1]
+  }
+}
+----------------------
+
+refilling the gumball machine
+
+----------------------
+Gumballs left: 2
+Machine State: <ref *2> NoQuarterState {
+  machine: <ref *1> GumballMachine {
+    gumballCount: 2,
+    outOfGumballsState: OutOfGumballsState { machine: [Circular *1] },
+    noQuarterState: [Circular *2],
+    hasQuarterState: HasQuarterState { machine: [Circular *1] },
+    soldState: SoldState { machine: [Circular *1] },
+    state: [Circular *2]
+  }
+}
+----------------------
+
+accepted quarter
+
+----------------------
+Gumballs left: 2
+Machine State: <ref *2> HasQuarterState {
+  machine: <ref *1> GumballMachine {
+    gumballCount: 2,
+    outOfGumballsState: OutOfGumballsState { machine: [Circular *1] },
+    noQuarterState: NoQuarterState { machine: [Circular *1] },
+    hasQuarterState: [Circular *2],
+    soldState: SoldState { machine: [Circular *1] },
+    state: [Circular *2]
+  }
+}
+----------------------
+
+refilling gumball machine
+
+----------------------
+Gumballs left: 3
+Machine State: <ref *2> HasQuarterState {
+  machine: <ref *1> GumballMachine {
+    gumballCount: 3,
+    outOfGumballsState: OutOfGumballsState { machine: [Circular *1] },
+    noQuarterState: NoQuarterState { machine: [Circular *1] },
+    hasQuarterState: [Circular *2],
+    soldState: SoldState { machine: [Circular *1] },
+    state: [Circular *2]
+  }
+}
+----------------------
+
+turning the crank
+dispensing gumball
+
+----------------------
+Gumballs left: 2
+Machine State: <ref *2> NoQuarterState {
+  machine: <ref *1> GumballMachine {
+    gumballCount: 2,
+    outOfGumballsState: OutOfGumballsState { machine: [Circular *1] },
+    noQuarterState: [Circular *2],
+    hasQuarterState: HasQuarterState { machine: [Circular *1] },
+    soldState: SoldState { machine: [Circular *1] },
+    state: [Circular *2]
+  }
+}
+----------------------
+
+refilling gumball machine
+
+----------------------
+Gumballs left: 3
+Machine State: <ref *2> NoQuarterState {
+  machine: <ref *1> GumballMachine {
+    gumballCount: 3,
+    outOfGumballsState: OutOfGumballsState { machine: [Circular *1] },
+    noQuarterState: [Circular *2],
+    hasQuarterState: HasQuarterState { machine: [Circular *1] },
+    soldState: SoldState { machine: [Circular *1] },
+    state: [Circular *2]
+  }
+}
+----------------------
+

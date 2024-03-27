@@ -1,3 +1,3 @@
-import compositePattern from "./patterns/compositePattern";
+import statePattern from "./patterns/statePattern";
 
-compositePattern();
+statePattern();
