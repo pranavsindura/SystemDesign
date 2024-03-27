@@ -95,6 +95,8 @@ abstract class MenuComponent {
   removeChild(_item: MenuComponent): void {
     throw UnsupportedException;
   }
+
+  abstract createCompositeIterator(): CustomIterator<MenuComponent | null>;
 }
 
 class MenuItem extends MenuComponent {
@@ -146,6 +148,10 @@ class MenuItem extends MenuComponent {
   createIterator(): CustomIterator<null> {
     return new NullIterator();
   }
+
+  createCompositeIterator(): CustomIterator<MenuComponent | null> {
+    return new NullIterator();
+  }
 }
 
 class Menu extends MenuComponent {
@@ -181,6 +187,10 @@ class Menu extends MenuComponent {
   createIterator(): CustomIterator<MenuComponent | null> {
     return new ArrayIterator(this.menuItems);
   }
+
+  createCompositeIterator(): CustomIterator<MenuComponent | null> {
+    return new CompositeIterator(new ArrayIterator(this.menuItems));
+  }
 }
 
 class Waitress {
@@ -193,7 +203,7 @@ class Waitress {
   printMenu(): void {
     console.log("All Menu");
     console.log("----------------");
-    const iterator = new CompositeIterator(this.menu.createIterator());
+    const iterator = this.menu.createCompositeIterator();
     while (iterator.hasNext()) {
       const next = iterator.next();
       if (next != null) {
@@ -205,7 +215,7 @@ class Waitress {
   printVegetarianMenu(): void {
     console.log("Vegetarian Menu");
     console.log("----------------");
-    const iterator = new CompositeIterator(this.menu.createIterator());
+    const iterator = this.menu.createCompositeIterator();
     while (iterator.hasNext()) {
       const next = iterator.next();
       try {
