@@ -179,7 +179,7 @@ class Menu extends MenuComponent {
   }
 
   createIterator(): CustomIterator<MenuComponent | null> {
-    return new CompositeIterator(new ArrayIterator(this.menuItems));
+    return new ArrayIterator(this.menuItems);
   }
 }
 
@@ -193,7 +193,7 @@ class Waitress {
   printMenu(): void {
     console.log("All Menu");
     console.log("----------------");
-    const iterator = this.menu.createIterator();
+    const iterator = new CompositeIterator(this.menu.createIterator());
     while (iterator.hasNext()) {
       const next = iterator.next();
       if (next != null) {
@@ -205,7 +205,7 @@ class Waitress {
   printVegetarianMenu(): void {
     console.log("Vegetarian Menu");
     console.log("----------------");
-    const iterator = this.menu.createIterator();
+    const iterator = new CompositeIterator(this.menu.createIterator());
     while (iterator.hasNext()) {
       const next = iterator.next();
       try {
@@ -259,9 +259,8 @@ function compositePattern(): void {
   );
 
   const waitress = new Waitress(allMenu);
-  // waitress.printVegetarianMenu();
+  waitress.printVegetarianMenu();
   waitress.printMenu();
 }
 
-compositePattern();
-export {};
+export default compositePattern;
