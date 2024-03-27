@@ -136,6 +136,13 @@ class SoldState implements State {
       this.machine.setGumballCount(this.machine.getGumballCount() - 1);
     }
 
+    const winner = Math.random() > 0.5;
+
+    if (winner && this.machine.getGumballCount() > 0) {
+      console.log("you are winner! dispensing another gumball");
+      this.machine.setGumballCount(this.machine.getGumballCount() - 1);
+    }
+
     if (this.machine.getGumballCount() > 0) {
       this.machine.setState(this.machine.getNoQuarterState());
     } else {
