@@ -109,4 +109,4 @@ function commandPattern(): void {
   kitchenLight.status();
 }
 
-commandPattern();
+export default commandPattern;

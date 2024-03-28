@@ -90,4 +90,4 @@ function facadePattern(): void {
   homeFacade.status();
 }
 
-facadePattern();
+export default facadePattern;

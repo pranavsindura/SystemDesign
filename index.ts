@@ -1,3 +1,3 @@
-import statePattern from "./patterns/statePattern";
+import parkingLotTestDrive from "./problems/parkingLot";
 
-statePattern();
+parkingLotTestDrive();

@@ -2,13 +2,14 @@
   "name": "systemdesignpractice",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
@@ -18,5 +19,8 @@
     "eslint-plugin-promise": "^6.1.1",
     "prettier": "3.2.5",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "uuid": "^9.0.1"
   }
 }
