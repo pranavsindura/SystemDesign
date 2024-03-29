@@ -87,7 +87,7 @@ abstract class PizzaFactory {
 }
 
 class NYPizzaFactory extends PizzaFactory {
-  protected createPizza(type: PizzaType): Pizza | null {
+  protected override createPizza(type: PizzaType): Pizza | null {
     switch (type) {
       case PizzaType.CHEESE:
         return new NYStyleCheesePizza();
