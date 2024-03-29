@@ -49,12 +49,6 @@ export abstract class Terminal {
   processPayment(_ticket: Ticket): void {
     throw new Error("method not implemented");
   }
-
-  print(): void {
-    console.log("Terminal", this.type);
-    console.log("ID", this.id);
-    this.parkingLot.print();
-  }
 }
 
 export class EntryTerminal extends Terminal {

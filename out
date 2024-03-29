@@ -1,79 +1,94 @@
-Parking Lot 1
-Available Spots
+---Parking Lot Status Changed---
+Parking Lot - 1
+Available Spots -
+HANDICAPPED 1
+Reserved Spots -
+-------------END---------------
+---Parking Lot Status Changed---
+Parking Lot - 1
+Available Spots -
+HANDICAPPED 1
+COMPACT 1
+Reserved Spots -
+-------------END---------------
+---Parking Lot Status Changed---
+Parking Lot - 1
+Available Spots -
+HANDICAPPED 1
+COMPACT 1
+LARGE 1
+Reserved Spots -
+-------------END---------------
+---Parking Lot Status Changed---
+Parking Lot - 1
+Available Spots -
 HANDICAPPED 1
 COMPACT 1
 LARGE 1
 MOTORCYCLE 1
-Reserved Spots
+Reserved Spots -
+-------------END---------------
 reserving a compact spot
-Parking Lot 1
-Available Spots
+---Parking Lot Status Changed---
+Parking Lot - 1
+Available Spots -
 HANDICAPPED 1
 COMPACT 0
 LARGE 1
 MOTORCYCLE 1
-Reserved Spots
+Reserved Spots -
 COMPACT 1
+-------------END---------------
 Ticket 7
-Created at 2024-03-28T06:24:30.485Z
+Created at 2024-03-29T06:34:37.715Z
 is expired false
 Associated parking spot
 Parking Spot
 ID 4
 Type COMPACT
 Reserved true
-release the spot
+releasing the compact spot
+---Parking Lot Status Changed---
+Parking Lot - 1
+Available Spots -
+HANDICAPPED 1
+COMPACT 1
+LARGE 1
+MOTORCYCLE 1
+Reserved Spots -
+COMPACT 0
+-------------END---------------
 Parking Fee 50
-Parking Lot 1
-Available Spots
-HANDICAPPED 1
-COMPACT 1
-LARGE 1
-MOTORCYCLE 1
-Reserved Spots
-COMPACT 0
-Ticket 7
-Created at 2024-03-28T06:24:30.485Z
-is expired true
-Associated parking spot
-Parking Spot
-ID 4
-Type COMPACT
-Reserved false
 reserving a Handicapped spot
-Parking Lot 1
-Available Spots
+---Parking Lot Status Changed---
+Parking Lot - 1
+Available Spots -
 HANDICAPPED 0
 COMPACT 1
 LARGE 1
 MOTORCYCLE 1
-Reserved Spots
+Reserved Spots -
 COMPACT 0
 HANDICAPPED 1
+-------------END---------------
 Ticket 8
-Created at 2024-03-28T06:24:32.493Z
+Created at 2024-03-29T06:34:39.722Z
 is expired false
 Associated parking spot
 Parking Spot
 ID 3
 Type HANDICAPPED
 Reserved true
-release the spot
-Parking Fee 1000
-Parking Lot 1
-Available Spots
+releasing the handicapped spot
+---Parking Lot Status Changed---
+Parking Lot - 1
+Available Spots -
 HANDICAPPED 1
 COMPACT 1
 LARGE 1
 MOTORCYCLE 1
-Reserved Spots
+Reserved Spots -
 COMPACT 0
 HANDICAPPED 0
-Ticket 8
-Created at 2024-03-28T06:24:32.493Z
-is expired true
-Associated parking spot
-Parking Spot
-ID 3
-Type HANDICAPPED
-Reserved false
+-------------END---------------
+Parking Fee 1000

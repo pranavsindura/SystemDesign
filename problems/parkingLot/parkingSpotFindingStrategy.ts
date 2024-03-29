@@ -10,7 +10,7 @@ export abstract class ParkingSpotFindingStrategy {
   }
 
   findParkingSpot(spotType: ParkingSpotType): ResultWithError<ParkingSpot> {
-    const list = this.parkingLot.getAvailableParkingSpots(spotType);
+    const list = this.parkingLot.getAvailableParkingSpotsByType(spotType);
     if (list.length === 0) {
       return [new Error("no parking spots available"), null];
     }

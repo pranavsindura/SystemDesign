@@ -1,3 +1,5 @@
 import parkingLotTestDrive from "./problems/parkingLot";
 
-parkingLotTestDrive();
+parkingLotTestDrive().catch((error) => {
+  console.log(error);
+});

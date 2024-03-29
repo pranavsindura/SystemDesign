@@ -1,13 +1,15 @@
 import IdGenerator from "./idGenerator";
+import { Observable } from "./observer";
 import { type ParkingSpot, type ParkingSpotType } from "./parkingSpot";
 
-export abstract class ParkingLot {
+export class ParkingLot extends Observable {
   private readonly id: number;
   private readonly level: number;
   private readonly availableParkingSpotMap: Map<ParkingSpotType, ParkingSpot[]>;
   private readonly reservedParkingSpotMap: Map<ParkingSpotType, ParkingSpot[]>;
 
   constructor(level: number) {
+    super();
     this.id = IdGenerator.getInstance().getId();
     this.level = level;
     this.availableParkingSpotMap = new Map();
@@ -26,6 +28,8 @@ export abstract class ParkingLot {
     const list = this.availableParkingSpotMap.get(parkingSpot.getType()) ?? [];
     list.push(parkingSpot);
     this.availableParkingSpotMap.set(parkingSpot.getType(), list);
+    this.setChanged();
+    this.notifyObservers();
   }
 
   reserveParkingSpot(parkingSpot: ParkingSpot): Error | undefined {
@@ -46,6 +50,8 @@ export abstract class ParkingLot {
       this.reservedParkingSpotMap.get(parkingSpot.getType()) ?? [];
     reservedList.push(parkingSpot);
     this.reservedParkingSpotMap.set(parkingSpot.getType(), reservedList);
+    this.setChanged();
+    this.notifyObservers();
   }
 
   releaseParkingSpot(parkingSpot: ParkingSpot): Error | undefined {
@@ -67,23 +73,19 @@ export abstract class ParkingLot {
       this.availableParkingSpotMap.get(parkingSpot.getType()) ?? [];
     availableList.push(parkingSpot);
     this.availableParkingSpotMap.set(parkingSpot.getType(), availableList);
+    this.setChanged();
+    this.notifyObservers();
   }
 
-  getAvailableParkingSpots(spotType: ParkingSpotType): ParkingSpot[] {
+  getAvailableParkingSpotsByType(spotType: ParkingSpotType): ParkingSpot[] {
     return this.availableParkingSpotMap.get(spotType) ?? [];
   }
 
-  print(): void {
-    console.log("Parking Lot", this.level);
-    console.log("Available Spots");
-    for (const [spotType, spotList] of this.availableParkingSpotMap) {
-      console.log(spotType, spotList.length);
-    }
-    console.log("Reserved Spots");
-    for (const [spotType, spotList] of this.reservedParkingSpotMap) {
-      console.log(spotType, spotList.length);
-    }
+  getAvailableParkingSpots(): Map<ParkingSpotType, ParkingSpot[]> {
+    return this.availableParkingSpotMap;
+  }
+
+  getReservedParkingSpots(): Map<ParkingSpotType, ParkingSpot[]> {
+    return this.reservedParkingSpotMap;
   }
 }
-
-export class DefaultParkingLot extends ParkingLot {}

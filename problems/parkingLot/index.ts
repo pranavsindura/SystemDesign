@@ -25,7 +25,8 @@
 
 import { HourlyParkingFeeFactory } from "./parkingFee";
 import { DefaultParkingFeeCalculator } from "./parkingFeeCalculator";
-import { DefaultParkingLot } from "./parkingLot";
+import { ParkingLot } from "./parkingLot";
+import { ParkingLotMonitor } from "./parkingLotMonitor";
 import { DefaultParkingSpot, ParkingSpotType } from "./parkingSpot";
 import { DefaultParkingSpotFindingStrategy } from "./parkingSpotFindingStrategy";
 import { EntryTerminal, ExitTerminal, TerminalType } from "./terminal";
@@ -43,7 +44,9 @@ import { wait } from "./utils";
  */
 
 async function parkingLotTestDrive(): Promise<void> {
-  const parkingLot = new DefaultParkingLot(1);
+  const parkingLotMonitor = new ParkingLotMonitor();
+  const parkingLot = new ParkingLot(1);
+  parkingLot.addObserver(parkingLotMonitor);
   const entryTerminalA = new EntryTerminal(
     TerminalType.ENTRY,
     parkingLot,
@@ -63,8 +66,6 @@ async function parkingLotTestDrive(): Promise<void> {
   parkingLot.addParkingSpot(new DefaultParkingSpot(ParkingSpotType.LARGE));
   parkingLot.addParkingSpot(new DefaultParkingSpot(ParkingSpotType.MOTORCYCLE));
 
-  parkingLot.print();
-
   console.log("reserving a compact spot");
   const [compactReserveError, compactTicket] =
     entryTerminalA.reserveParkingSpot(ParkingSpotType.COMPACT);
@@ -74,21 +75,16 @@ async function parkingLotTestDrive(): Promise<void> {
   if (compactReserveError != null) {
     console.error(compactReserveError);
   } else {
-    parkingLot.print();
     compactTicket.print();
 
-    console.log("release the spot");
+    console.log("releasing the compact spot");
     const [releaseError, parkingFee] =
       exitTerminalA.releaseParkingSpot(compactTicket);
     if (releaseError != null) {
       console.error(releaseError);
-      return;
     }
 
     console.log("Parking Fee", parkingFee);
-
-    parkingLot.print();
-    compactTicket.print();
   }
 
   console.log("reserving a Handicapped spot");
@@ -98,23 +94,18 @@ async function parkingLotTestDrive(): Promise<void> {
   if (handicappedReserveError != null) {
     console.error(handicappedReserveError);
   } else {
-    parkingLot.print();
     handicappedTicket.print();
 
     await wait(2000);
 
-    console.log("release the spot");
+    console.log("releasing the handicapped spot");
     const [releaseError, parkingFee] =
       exitTerminalA.releaseParkingSpot(handicappedTicket);
     if (releaseError != null) {
       console.error(releaseError);
-      return;
     }
 
     console.log("Parking Fee", parkingFee);
-
-    parkingLot.print();
-    handicappedTicket.print();
   }
 }
 

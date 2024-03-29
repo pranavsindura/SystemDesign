@@ -113,6 +113,7 @@ function observerPattern(): void {
   musicPlayer.resume();
   musicPlayer.stop();
   musicPlayer.play("Jorja Smith - Come Over");
+  musicPlayer.removeObserver(musicPlayerMonitor);
   musicPlayer.play("ScHoolboy Q - X");
 }
 
