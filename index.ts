@@ -1,3 +1,3 @@
-import strategyPattern from "./patterns/strategyPattern";
+import { protectionProxyPattern } from "./patterns/proxyPattern";
 
-strategyPattern();
+protectionProxyPattern();
