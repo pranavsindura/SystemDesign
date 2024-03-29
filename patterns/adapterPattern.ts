@@ -60,4 +60,4 @@ function adapterPattern(): void {
   turkeyAdapter.quack();
 }
 
-adapterPattern();
+export default adapterPattern;

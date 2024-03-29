@@ -1,5 +1,3 @@
-import parkingLotTestDrive from "./problems/parkingLot";
+import strategyPattern from "./patterns/strategyPattern";
 
-parkingLotTestDrive().catch((error) => {
-  console.log(error);
-});
+strategyPattern();
