@@ -1,4 +1,4 @@
-import { ParkingTicket, type Ticket } from "./ticket";
+import { ParkingTicket } from "./ticket";
 import { type ParkingSpot, type ParkingSpotType } from "./parkingSpot";
 import { type ParkingLot } from "./parkingLot";
 import IdGenerator from "./idGenerator";
@@ -38,15 +38,15 @@ export abstract class Terminal {
     return [new Error("method not implemented"), null];
   }
 
-  reserveParkingSpot(_type: ParkingSpotType): ResultWithError<Ticket> {
+  reserveParkingSpot(_type: ParkingSpotType): ResultWithError<ParkingTicket> {
     return [new Error("method not implemented"), null];
   }
 
-  releaseParkingSpot(_ticket: Ticket): ResultWithError<number> {
+  releaseParkingSpot(_ticket: ParkingTicket): ResultWithError<number> {
     return [new Error("method not implemented"), null];
   }
 
-  processPayment(_ticket: Ticket): void {
+  processPayment(_ticket: ParkingTicket): void {
     throw new Error("method not implemented");
   }
 }
@@ -63,7 +63,7 @@ export class EntryTerminal extends Terminal {
     this.parkingSpotFindingStrategy = parkingSpotFindingStrategy;
   }
 
-  reserveParkingSpot(type: ParkingSpotType): ResultWithError<Ticket> {
+  reserveParkingSpot(type: ParkingSpotType): ResultWithError<ParkingTicket> {
     const [findError, findResult] = this.findParkingSpot(type);
     if (findError != null) {
       return [findError, null];
@@ -94,7 +94,7 @@ export class ExitTerminal extends Terminal {
     this.parkingFeeCalculator = parkingFeeCalculator;
   }
 
-  releaseParkingSpot(ticket: Ticket): ResultWithError<number> {
+  releaseParkingSpot(ticket: ParkingTicket): ResultWithError<number> {
     if (ticket.isExpired()) {
       return [new Error("ticket is expired"), null];
     }

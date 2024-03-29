@@ -1,16 +1,7 @@
 import IdGenerator from "./idGenerator";
 import { type ParkingSpot } from "./parkingSpot";
 
-export interface Ticket {
-  getId: () => number;
-  getParkingSpot: () => ParkingSpot;
-  getTimestamp: () => Date;
-  print: () => void;
-  isExpired: () => boolean;
-  expire: () => void;
-}
-
-export class ParkingTicket implements Ticket {
+export class ParkingTicket {
   private readonly id: number;
   private readonly timestamp: Date;
   private readonly parkingSpot: ParkingSpot;

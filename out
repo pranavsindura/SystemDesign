@@ -1,0 +1,94 @@
+---Parking Lot Status Changed---
+Parking Lot - 1
+Available Spots -
+HANDICAPPED 1
+Reserved Spots -
+-------------END---------------
+---Parking Lot Status Changed---
+Parking Lot - 1
+Available Spots -
+HANDICAPPED 1
+COMPACT 1
+Reserved Spots -
+-------------END---------------
+---Parking Lot Status Changed---
+Parking Lot - 1
+Available Spots -
+HANDICAPPED 1
+COMPACT 1
+LARGE 1
+Reserved Spots -
+-------------END---------------
+---Parking Lot Status Changed---
+Parking Lot - 1
+Available Spots -
+HANDICAPPED 1
+COMPACT 1
+LARGE 1
+MOTORCYCLE 1
+Reserved Spots -
+-------------END---------------
+reserving a compact spot
+---Parking Lot Status Changed---
+Parking Lot - 1
+Available Spots -
+HANDICAPPED 1
+COMPACT 0
+LARGE 1
+MOTORCYCLE 1
+Reserved Spots -
+COMPACT 1
+-------------END---------------
+Ticket 7
+Created at 2024-03-29T17:07:36.852Z
+is expired false
+Associated parking spot
+Parking Spot
+ID 4
+Type COMPACT
+Reserved true
+releasing the compact spot
+---Parking Lot Status Changed---
+Parking Lot - 1
+Available Spots -
+HANDICAPPED 1
+COMPACT 1
+LARGE 1
+MOTORCYCLE 1
+Reserved Spots -
+COMPACT 0
+-------------END---------------
+Parking Fee 50
+reserving a Handicapped spot
+---Parking Lot Status Changed---
+Parking Lot - 1
+Available Spots -
+HANDICAPPED 0
+COMPACT 1
+LARGE 1
+MOTORCYCLE 1
+Reserved Spots -
+COMPACT 0
+HANDICAPPED 1
+-------------END---------------
+Ticket 8
+Created at 2024-03-29T17:07:38.860Z
+is expired false
+Associated parking spot
+Parking Spot
+ID 3
+Type HANDICAPPED
+Reserved true
+releasing the handicapped spot
+---Parking Lot Status Changed---
+Parking Lot - 1
+Available Spots -
+HANDICAPPED 1
+COMPACT 1
+LARGE 1
+MOTORCYCLE 1
+Reserved Spots -
+COMPACT 0
+HANDICAPPED 0
+-------------END---------------
+Parking Fee 1000

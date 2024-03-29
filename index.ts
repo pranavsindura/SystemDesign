@@ -1,3 +1,3 @@
-import { protectionProxyPattern } from "./patterns/proxyPattern";
+import parkingLotTestDrive from "./problems/parkingLot";
 
-protectionProxyPattern();
+void parkingLotTestDrive();

@@ -1,15 +1,15 @@
 import { type ParkingFeeFactory } from "./parkingFee";
-import { type Ticket } from "./ticket";
+import { type ParkingTicket } from "./ticket";
 import { type ResultWithError } from "./types";
 
-export abstract class ParkingFeeCalculator {
+export class ParkingFeeCalculator {
   private readonly parkingFeeFactory: ParkingFeeFactory;
 
   constructor(parkingFeeFactory: ParkingFeeFactory) {
     this.parkingFeeFactory = parkingFeeFactory;
   }
 
-  calculateFee(ticket: Ticket): ResultWithError<number> {
+  calculateFee(ticket: ParkingTicket): ResultWithError<number> {
     const spot = ticket.getParkingSpot();
     const [error, fee] = this.parkingFeeFactory.getParkingFee(spot.getType());
     if (error != null) {
@@ -21,5 +21,3 @@ export abstract class ParkingFeeCalculator {
     return [null, Math.ceil(ms / fee.getDurationInMs()) * fee.getRate()];
   }
 }
-
-export class DefaultParkingFeeCalculator extends ParkingFeeCalculator {}

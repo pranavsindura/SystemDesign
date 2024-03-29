@@ -2,7 +2,7 @@ import { type ParkingLot } from "./parkingLot";
 import { type ParkingSpot, type ParkingSpotType } from "./parkingSpot";
 import { type ResultWithError } from "./types";
 
-export abstract class ParkingSpotFindingStrategy {
+export class ParkingSpotFindingStrategy {
   private readonly parkingLot: ParkingLot;
 
   constructor(parkingLot: ParkingLot) {
@@ -17,5 +17,3 @@ export abstract class ParkingSpotFindingStrategy {
     return [null, list[0]];
   }
 }
-
-export class DefaultParkingSpotFindingStrategy extends ParkingSpotFindingStrategy {}

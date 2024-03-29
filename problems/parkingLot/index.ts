@@ -24,11 +24,11 @@
  */
 
 import { HourlyParkingFeeFactory } from "./parkingFee";
-import { DefaultParkingFeeCalculator } from "./parkingFeeCalculator";
+import { ParkingFeeCalculator } from "./parkingFeeCalculator";
 import { ParkingLot } from "./parkingLot";
 import { ParkingLotMonitor } from "./parkingLotMonitor";
-import { DefaultParkingSpot, ParkingSpotType } from "./parkingSpot";
-import { DefaultParkingSpotFindingStrategy } from "./parkingSpotFindingStrategy";
+import { ParkingSpot, ParkingSpotType } from "./parkingSpot";
+import { ParkingSpotFindingStrategy } from "./parkingSpotFindingStrategy";
 import { EntryTerminal, ExitTerminal, TerminalType } from "./terminal";
 import { wait } from "./utils";
 
@@ -50,21 +50,19 @@ async function parkingLotTestDrive(): Promise<void> {
   const entryTerminalA = new EntryTerminal(
     TerminalType.ENTRY,
     parkingLot,
-    new DefaultParkingSpotFindingStrategy(parkingLot),
+    new ParkingSpotFindingStrategy(parkingLot),
   );
 
   const exitTerminalA = new ExitTerminal(
     TerminalType.EXIT,
     parkingLot,
-    new DefaultParkingFeeCalculator(new HourlyParkingFeeFactory()),
+    new ParkingFeeCalculator(new HourlyParkingFeeFactory()),
   );
 
-  parkingLot.addParkingSpot(
-    new DefaultParkingSpot(ParkingSpotType.HANDICAPPED),
-  );
-  parkingLot.addParkingSpot(new DefaultParkingSpot(ParkingSpotType.COMPACT));
-  parkingLot.addParkingSpot(new DefaultParkingSpot(ParkingSpotType.LARGE));
-  parkingLot.addParkingSpot(new DefaultParkingSpot(ParkingSpotType.MOTORCYCLE));
+  parkingLot.addParkingSpot(new ParkingSpot(ParkingSpotType.HANDICAPPED));
+  parkingLot.addParkingSpot(new ParkingSpot(ParkingSpotType.COMPACT));
+  parkingLot.addParkingSpot(new ParkingSpot(ParkingSpotType.LARGE));
+  parkingLot.addParkingSpot(new ParkingSpot(ParkingSpotType.MOTORCYCLE));
 
   console.log("reserving a compact spot");
   const [compactReserveError, compactTicket] =

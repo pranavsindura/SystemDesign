@@ -7,7 +7,7 @@ export enum ParkingSpotType {
   MOTORCYCLE = "MOTORCYCLE",
 }
 
-export abstract class ParkingSpot {
+export class ParkingSpot {
   private readonly type: ParkingSpotType;
   private readonly id: number;
   private reserved: boolean;
@@ -45,5 +45,3 @@ export abstract class ParkingSpot {
     console.log("Reserved", this.reserved);
   }
 }
-
-export class DefaultParkingSpot extends ParkingSpot {}
