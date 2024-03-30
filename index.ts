@@ -1,3 +1,3 @@
-import parkingLotTestDrive from "./problems/parkingLot";
+import ticTacToe from "./problems/ticTacToe";
 
-void parkingLotTestDrive();
+void ticTacToe();
