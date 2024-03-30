@@ -19,6 +19,7 @@ async function ticTacToe(): Promise<void> {
   const player2 = new Player("Kartik", PlayerSymbol.NAUGHT);
   const game = new Game(3, [player1, player2]);
   await game.startGame();
+  game.printResult();
 }
 
 export default ticTacToe;
