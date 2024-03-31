@@ -1,3 +1,3 @@
-import ticTacToe from "./problems/ticTacToe";
+import elevatorTestDrive from "./problems/elevator";
 
-void ticTacToe();
+elevatorTestDrive();
