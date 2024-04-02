@@ -1,3 +1,3 @@
-import elevatorTestDrive from "./problems/elevator";
+import { elevatorManagerTestDrive } from "./problems/elevator";
 
-elevatorTestDrive();
+elevatorManagerTestDrive();

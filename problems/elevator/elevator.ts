@@ -11,11 +11,27 @@ export class Elevator {
   private ongoingMovement: ElevatorMovement | null;
   private movementStrategy: ElevatorMovementStrategy;
 
-  constructor(id: number, movementStrategy: ElevatorMovementStrategy) {
+  constructor(
+    id: number,
+    initialFloor: number,
+    movementStrategy: ElevatorMovementStrategy,
+  ) {
     this.id = id;
     this.movementStrategy = movementStrategy;
     this.ongoingMovement = null;
-    this.currentFloor = 0;
+    this.currentFloor = initialFloor;
+  }
+
+  getId(): number {
+    return this.id;
+  }
+
+  getCurrentFloor(): number {
+    return this.currentFloor;
+  }
+
+  getOngoingMovement(): ElevatorMovement | null {
+    return this.ongoingMovement;
   }
 
   queueRequest(floor: number): void {

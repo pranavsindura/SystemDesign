@@ -28,10 +28,16 @@
  * */
 
 import { Elevator } from "./elevator";
-import { LookMovementStrategy } from "./elevatorMovementStrategy";
+import { ElevatorManager } from "./elevatorManager";
+import { ElevatorMovementDirection } from "./elevatorMovement";
+import {
+  FCFSMovementStrategy,
+  LookMovementStrategy,
+} from "./elevatorMovementStrategy";
+import { ShortestSeekTimeSelectionStrategy } from "./elevatorSelectionStrategy";
 
-function elevatorTestDrive(): void {
-  const e = new Elevator(1, new LookMovementStrategy(0));
+export function elevatorTestDrive(): void {
+  const e = new Elevator(1, 0, new LookMovementStrategy(0));
   e.queueRequest(1);
   e.queueRequest(10);
   e.queueRequest(3);
@@ -44,4 +50,30 @@ function elevatorTestDrive(): void {
   }, 6000);
 }
 
-export default elevatorTestDrive;
+export function elevatorManagerTestDrive(): void {
+  const e1 = new Elevator(1, 0, new LookMovementStrategy(0));
+  const e2 = new Elevator(2, 0, new FCFSMovementStrategy(0));
+
+  const eManager = new ElevatorManager(new ShortestSeekTimeSelectionStrategy());
+
+  eManager.addElevator(e1);
+  eManager.addElevator(e2);
+
+  const r1 = eManager.queueRequest(3, ElevatorMovementDirection.UP);
+  r1.queueRequest(5);
+
+  const r2 = eManager.queueRequest(2, ElevatorMovementDirection.DOWN);
+  r2.queueRequest(0);
+
+  const r3 = eManager.queueRequest(1, ElevatorMovementDirection.UP);
+  r3.queueRequest(5);
+
+  const r4 = eManager.queueRequest(5, ElevatorMovementDirection.DOWN);
+  r4.queueRequest(0);
+
+  const r5 = eManager.queueRequest(5, ElevatorMovementDirection.UP);
+  r5.queueRequest(10);
+
+  const r6 = eManager.queueRequest(9, ElevatorMovementDirection.DOWN);
+  r6.queueRequest(0);
+}
