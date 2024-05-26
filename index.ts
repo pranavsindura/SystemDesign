@@ -1,3 +1,3 @@
-import { elevatorManagerTestDrive } from "./problems/elevator";
+import surveySystemTestDrive from "./problems/surveySystem";
 
-elevatorManagerTestDrive();
+surveySystemTestDrive();
