@@ -1,4 +1,5 @@
 import express, { json } from "express";
+import cors from "cors";
 import QuestionDatabase from "../core/questionDatabase";
 import SurveyDatabase from "../core/surveyDatabase";
 import questionsRouter from "./routes/questions";
@@ -10,6 +11,7 @@ function createServer() {
   const app = express();
 
   app.use(json());
+  app.use(cors());
 
   app.use(questionsRouter);
 
